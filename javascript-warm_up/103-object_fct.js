@@ -1,12 +1,11 @@
 // File: 103-object_fct.js
-#!/usr/bin/node
 
 const myObject = {
-  type: 'object',
+  type: "object",
   value: 12,
   incr: function () {
     this.value++;
-  }
+  },
 };
 
 console.log(myObject);
