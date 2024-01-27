@@ -1,3 +1,1 @@
-class Rectangle {
-  pass;
-}
+class Rectangle {}
