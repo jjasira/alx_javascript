@@ -1,1 +1,1 @@
-myVar = 333;
+export const myVar = 333;
