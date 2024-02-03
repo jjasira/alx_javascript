@@ -1,6 +1,6 @@
 const request = require("request");
 
-const getMovieCast = (movieId) => {
+const getCharactersOfMovie = (movieId) => {
   const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
   request(apiUrl, (error, response, body) => {
@@ -13,7 +13,7 @@ const getMovieCast = (movieId) => {
         const movieData = JSON.parse(body);
         const characterUrls = movieData.characters;
 
-        characterUrls.forEach((charcterUrl) => {
+        characterUrls.forEach((characterUrl) => {
           request(
             characterUrl,
             (characterError, characterResponse, characterBody) => {
@@ -45,5 +45,10 @@ const getMovieCast = (movieId) => {
   });
 };
 
+if (process.argv.length !== 3) {
+  console.log("Usage: node get_starwars_characters.js <MovieID>");
+  process.exit(1);
+}
+
 const movieId = process.argv[2];
-getMovieCast(movieId);
+getCharactersOfMovie(movieId);
