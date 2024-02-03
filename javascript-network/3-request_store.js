@@ -10,7 +10,7 @@ const fetchAndSaveWebpage = (url, path) => {
     } else {
       try {
         fs.writeFileSync(path, body, "utf-8");
-        console.log(`Webpage content saved to ${path}`);
+        // console.log(`Webpage content saved to ${path}`);
       } catch (writeError) {
         console.error(`Error writing to file: ${writeError.message}`);
       }
