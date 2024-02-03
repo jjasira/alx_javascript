@@ -14,9 +14,7 @@ const countMoviesWithWedgeAntilles = (apiUrl) => {
             "https://swapi-api.alx-tools.com/api/people/18/"
           )
         );
-        console.log(
-          `Number of movies with Wedge Antilles: ${moviesWithWedgeAntilles.length}`
-        );
+        console.log(`${moviesWithWedgeAntilles.length}`);
       } catch (parseError) {
         console.error(`Error parsing JSON: ${parseError.message}`);
       }
