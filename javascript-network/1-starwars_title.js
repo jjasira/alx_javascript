@@ -11,18 +11,13 @@ const getMovieTitle = (movieId) => {
     } else {
       try {
         const movieData = JSON.parse(body);
-        console.log(`Title: ${movieData.title}`);
+        console.log(`${movieData.title}`);
       } catch (parseError) {
         console.error(`Error parsing JSON: ${parseError.message}`);
       }
     }
   });
 };
-
-if (process.argv.length !== 3) {
-  console.log("Usage: node get_movie_title.js <MovieID>");
-  process.exit(1);
-}
 
 const movieId = process.argv[2];
 getMovieTitle(movieId);
