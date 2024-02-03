@@ -2,7 +2,7 @@ const request = require("request");
 const fs = require("fs");
 
 const fetchAndSaveWebpage = (url, path) => {
-  request(url, (error, reponse, body) => {
+  request(url, (error, response, body) => {
     if (error) {
       console.error(`Error: ${error.message}`);
     } else if (response.statusCode !== 200) {
