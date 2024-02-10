@@ -2,8 +2,11 @@ function setCookies() {
   const firstnameValue = document.getElementById("firstname").value;
   const emailValue = document.getElementById("email").value;
 
-  document.cookie = `firstname=${firstnameValue}; path=/`;
-  document.cookie = `email=${emailValue}; path=/`;
+  const expirationDate = new Date();
+  expirationDate.setTime(expirationDate.getTime() + 10 * 24 * 60 * 60 * 1000);
+
+  document.cookie = `firstname=${firstnameValue}; expires=${expirationDate.toUTCString()}; path=/`;
+  document.cookie = `email=${emailValue}; expires=${expirationDate.toUTCString()}; path=/`;
 }
 
 function showCookies() {
